@@ -242,6 +242,11 @@
                 window.newUrlString = url;
                 document.getElementById("confirmUrlText").innerText = "Are you sure you want to visit " + url;                
             }
+	    function FocusCanvas(focus) {
+	        if (gameReady) {
+	        SendMessage("GameControl", "FocusCanvas", focus);
+	        }
+	    }
             window.ITRACKER_GLOBALS = {
                 //place global settings here
                 INTERNAL_SMOOTHFACTOR_POS: .075,
