@@ -1,4 +1,4 @@
-stickar as entertaint to show somple animation with Augmented Reality
+vintageCarSeries as entertaint to show 3d products with Augmented Reality
 
 how to use :
 
