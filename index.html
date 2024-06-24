@@ -253,5 +253,16 @@
             }
             
     </script>
+	<script type='text/javascript'>
+	    document.addEventListener('click', function(e) {
+	        if (e.target.id == "canvas") {
+	            // Clicked on canvas
+	            FocusCanvas("0");
+	        } else {
+	            // Clicked outside of canvas
+	            FocusCanvas("0");
+	        }
+	    });
+	</script>
 </body>
 </html>
