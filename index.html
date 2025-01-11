@@ -378,13 +378,13 @@
           var screenshotDiv = document.getElementById('screenshotDiv');
           screenshotDiv.style.opacity = 0;
           setTimeout(()=>{
-            screenshotDiv.style.display = "";
+            screenshotDiv.style.display = "none";
           }, 500);
       }
       function ShowConfirmUrl(url){
           var confirmUrlDiv = document.getElementById("confirmUrlDiv");
           confirmUrlDiv.style.opacity = 1;
-          confirmUrlDiv.style.display = "";
+          confirmUrlDiv.style.display = "none";
           window.newUrlString = url;
           document.getElementById("confirmUrlText").innerText = "Are you sure you want to visit " + url + "?";                
       }
@@ -392,7 +392,7 @@
           var confirmUrlDiv = document.getElementById("confirmUrlDiv");
           confirmUrlDiv.style.opacity = 0;
           setTimeout(()=>{
-            confirmUrlDiv.style.display = "";
+            confirmUrlDiv.style.display = "none";
           }, 500);
       }
       window.ITRACKER_GLOBALS = {
