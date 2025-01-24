@@ -4,10 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <title>Vintage Car Series by WolfPupLabs</title>
+    <title>Unity WebGL Player | stickar</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <link rel="manifest" href="manifest.webmanifest">
@@ -31,34 +28,25 @@
 		<imagetarget id='superbeetle2' src='targets/superbeetle2.jpeg'></imagetarget>
 		<imagetarget id='superbeetle3' src='targets/superbeetle3.jpeg'></imagetarget>
 		<imagetarget id='superbeetle4' src='targets/superbeetle4.jpeg'></imagetarget>
-		<imagetarget id='vw_beetle' src='targets/vw_beetle.jpeg'></imagetarget>
-		<imagetarget id='vw_safari' src='targets/vw_safari.jpeg'></imagetarget>
-		<imagetarget id='vw_dakota' src='targets/vw_dakota.jpeg'></imagetarget>
-		<imagetarget id='vw_combi_black' src='targets/vw_combi_black.jpeg'></imagetarget>
-		<imagetarget id='vw_blau_big' src='targets/vw_blau_big.jpeg'></imagetarget>
 		<imagetarget id='vw_ssafari_big' src='targets/vw_ssafari_big.jpeg'></imagetarget>
-		<imagetarget id='vw_dakota_big' src='targets/vw_dakota_big.jpeg'></imagetarget>
 		<imagetarget id='vw_combi_big' src='targets/vw_combi_big.jpeg'></imagetarget>
 		<imagetarget id='vw_beetle_big' src='targets/vw_beetle_big.jpeg'></imagetarget>
-		<imagetarget id='vw_super_beetle' src='targets/vw_super_beetle.jpeg'></imagetarget>
 		<imagetarget id='vw_ssafari_coster' src='targets/vw_ssafari_coster.jpeg'></imagetarget>
-		<imagetarget id='vw_dakota_coster' src='targets/vw_dakota_coster.jpeg'></imagetarget>
 		<imagetarget id='vw_combi_coster' src='targets/vw_combi_coster.jpeg'></imagetarget>
 		<imagetarget id='vw_beele_coster' src='targets/vw_beele_coster.jpeg'></imagetarget>
 		<imagetarget id='vw_blau_coster' src='targets/vw_blau_coster.jpeg'></imagetarget>
-		<imagetarget id='vw_super_beetle_upLook' src='targets/vw_super_beetle_upLook.jpeg'></imagetarget>
 		<imagetarget id='vw_super_beetle_upLook' src='targets/vw_super_beetle_upLook.jpeg'></imagetarget>
 
     <video id="webcam-video" muted autoplay playsinline style="width:1px;position:absolute"></video>
     <canvas id="video-canvas" style="width:100%; height:100%; object-fit:cover; position:absolute"></canvas>
     <div id="startARDiv" class="ctaDiv" style="background: #2f2e32">
-      <select id="chooseCamSel" style="display: none; background: transparent; border: .05vh solid white; border-radius: max(0.5vw, 0.5vh); color:white; font-size: max(1.5vw, 1.5vh); position: absolute; bottom: 80px" 
+      <select id="chooseCamSel" style="visibility: hidden; background: transparent; border: .05vh solid white; border-radius: max(0.5vw, 0.5vh); color:white; font-size: max(1.5vw, 1.5vh); position: absolute; bottom: 80px" 
         onchange="SelectCam()"></select>
       <p style="text-align: center; width:min(60vw, 60vh);">This augmented reality experience requires access to your device's camera</p>
-      <button id="startARButton" onclick="StartAR()" style="display: none">ALLOW ACCESS</button>
+      <button id="startARButton" onclick="StartAR()" style="visibility: hidden">ALLOW ACCESS</button>
       <br><br><br>
     </div>
-    <div id="screenshotDiv" style="display: none; opacity: 0;" class="ctaDiv">
+    <div id="screenshotDiv" style="visibility: hidden; opacity: 0;" class="ctaDiv">
         <div style="position:relative; background-color:#2c2b2f; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.25); border-radius: max(1.5vh, 1.5vw); text-align: center; overflow: hidden"> 
           <img id="screenshotImg" src="" alt="screenshot" style="width:80vw; height:80vh">
           <button onclick="HideScreenshot()" style="position:absolute;right: max(1vw, 1vh);top: max(1vw, 1vh);background: #3d3d3d77; width: max(4vw, 4vh); height: max(4vw, 4vh);padding: 0;border-radius: 100vw; display: flex;align-items: center;justify-content: center;">
@@ -70,7 +58,7 @@
           <p style="font-size: max(1vw, 1vh); color: #fff6" >Press and hold to save or share this screenshot</p>
           </div>
     </div>
-    <div id="confirmUrlDiv" style="display: none; opacity: 0;" class="ctaDiv">
+    <div id="confirmUrlDiv" style="visibility: hidden; opacity: 0;" class="ctaDiv">
         <div style="position:relative; background-color:#2c2b2f; padding:10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.25); width: min(80vw,80vh); display:flex; flex-direction: column; align-items: center; border-radius: 1.5vh;
 ">
             <p id="confirmUrlText" style="text-align: center; width:80%; overflow: hidden; text-overflow: ellipsis;">Are you sure you want to visit url.com?</p>
@@ -80,7 +68,7 @@
             </div>
         </div>
     </div>
-    <div id="errorDiv" class="ctaDiv" style="display: none; opacity: 0; background-color:#2c2b2f">
+    <div id="errorDiv" class="ctaDiv" style="visibility: hidden; opacity: 0; background-color:#2c2b2f">
         <p id="errorText" style="text-align: center; width:60vw; color:#7f3f3f; font-size: max(3vw, 3vh);"></p>
     </div>
     <div id="unity-container">
@@ -121,7 +109,7 @@
             return;
         }
         await LoadWebcams();
-        document.getElementById("startARButton").style.display = "";
+        document.getElementById("startARButton").style.visibility = "visible";
         window.permissionsGranted = IsCameraPermissionGranted();
       }
       initialize();
@@ -162,7 +150,7 @@
         var startARDiv = document.querySelector("#startARDiv");
         startARDiv.style.opacity = 0;
         setTimeout(()=>{
-          startARDiv.style.display = "none";
+          startARDiv.style.visibility = "hidden";
         }, 500);
         var buildUrl = "Build";
         var loaderUrl = buildUrl + "/stickar.loader.js";
@@ -196,7 +184,7 @@
           createUnityInstance(canvas, config, (progress) => {
             progressBarFull.style.width = 100 * progress + "%";
           }).then((unityInstance) => {
-            loadingBar.style.display = "";
+            loadingBar.style.display = "none";
             
             window.unityInstance = unityInstance;
             if(window.permissionsGranted) {
@@ -295,7 +283,7 @@
               }
           });
           var select = document.getElementById("chooseCamSel");
-          select.style.display = "";
+          select.style.visibility = "visible";
           var count = 0;
           //reverse array because some Android phones can't distinguish front and back cams at first load
           //and when this happens, most of the time, front cam goes first and back cam goes last
@@ -363,13 +351,13 @@
       function ShowError(error){
           var errorDiv = document.getElementById("errorDiv");
           errorDiv.style.opacity = 1;
-          errorDiv.style.display = 'none';
+          errorDiv.style.visibility = "visible";
           document.getElementById("errorText").innerHTML = error;
       }
       function ShowScreenshot(dataUrl){
           var screenshotDiv = document.getElementById("screenshotDiv");
           screenshotDiv.style.opacity = 1;
-          screenshotDiv.style.display = 'none';
+          screenshotDiv.style.visibility = "visible";
           document.getElementById("screenshotImg").src = dataUrl;
           document.getElementById("screenshotImg").style.width = "80vw";
           document.getElementById("screenshotImg").style.height = 80 / window.innerWidth * window.innerHeight + "vw";
@@ -378,13 +366,13 @@
           var screenshotDiv = document.getElementById('screenshotDiv');
           screenshotDiv.style.opacity = 0;
           setTimeout(()=>{
-            screenshotDiv.style.display = 'none';
+            screenshotDiv.style.visibility = 'hidden';
           }, 500);
       }
       function ShowConfirmUrl(url){
           var confirmUrlDiv = document.getElementById("confirmUrlDiv");
           confirmUrlDiv.style.opacity = 1;
-          confirmUrlDiv.style.display = 'none';
+          confirmUrlDiv.style.visibility = "visible";
           window.newUrlString = url;
           document.getElementById("confirmUrlText").innerText = "Are you sure you want to visit " + url + "?";                
       }
@@ -392,7 +380,7 @@
           var confirmUrlDiv = document.getElementById("confirmUrlDiv");
           confirmUrlDiv.style.opacity = 0;
           setTimeout(()=>{
-            confirmUrlDiv.style.display = 'none';
+            confirmUrlDiv.style.visibility = 'hidden';
           }, 500);
       }
       window.ITRACKER_GLOBALS = {
