@@ -150,7 +150,7 @@
         var startARDiv = document.querySelector("#startARDiv");
         startARDiv.style.opacity = 0;
         setTimeout(()=>{
-          startARDiv.style.visibility = "hidden";
+          startARDiv.style.display = "none";
         }, 500);
         var buildUrl = "Build";
         var loaderUrl = buildUrl + "/stickar.loader.js";
@@ -351,13 +351,13 @@
       function ShowError(error){
           var errorDiv = document.getElementById("errorDiv");
           errorDiv.style.opacity = 1;
-          errorDiv.style.visibility = "visible";
+          errorDiv.style.display = "none";
           document.getElementById("errorText").innerHTML = error;
       }
       function ShowScreenshot(dataUrl){
           var screenshotDiv = document.getElementById("screenshotDiv");
           screenshotDiv.style.opacity = 1;
-          screenshotDiv.style.visibility = "visible";
+          screenshotDiv.style.display = "none";
           document.getElementById("screenshotImg").src = dataUrl;
           document.getElementById("screenshotImg").style.width = "80vw";
           document.getElementById("screenshotImg").style.height = 80 / window.innerWidth * window.innerHeight + "vw";
@@ -366,13 +366,13 @@
           var screenshotDiv = document.getElementById('screenshotDiv');
           screenshotDiv.style.opacity = 0;
           setTimeout(()=>{
-            screenshotDiv.style.visibility = 'hidden';
+            screenshotDiv.style.display = 'none';
           }, 500);
       }
       function ShowConfirmUrl(url){
           var confirmUrlDiv = document.getElementById("confirmUrlDiv");
           confirmUrlDiv.style.opacity = 1;
-          confirmUrlDiv.style.visibility = "visible";
+          confirmUrlDiv.style.display = "none";
           window.newUrlString = url;
           document.getElementById("confirmUrlText").innerText = "Are you sure you want to visit " + url + "?";                
       }
@@ -380,7 +380,7 @@
           var confirmUrlDiv = document.getElementById("confirmUrlDiv");
           confirmUrlDiv.style.opacity = 0;
           setTimeout(()=>{
-            confirmUrlDiv.style.visibility = 'hidden';
+            confirmUrlDiv.style.display = 'none';
           }, 500);
       }
       window.ITRACKER_GLOBALS = {
